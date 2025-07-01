@@ -17,7 +17,7 @@ import course5 from '../assets/course5.mp4';
 // logos
 import corebyclaresmyth from '../assets/corebyclaresmyth.png';
 import bibendum from '../assets/Bibendum.png';
-import story from '../assets/Story.png';
+import story from '../assets/story.png';
 import saellondon from '../assets/saellondon.png';
 import hakkasan from '../assets/hak.svg';
 import piedaterre from '../assets/PiedàTerre.png';
