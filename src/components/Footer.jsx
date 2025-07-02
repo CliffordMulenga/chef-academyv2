@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-white pt-24 ">
-      {/* CTA Banner */}
+
       {/* CTA Banner */}
 <section className="relative bg-gray-100 py-10 md:py-20 overflow-hidden">
   {/* Infinite Image Scroll */}

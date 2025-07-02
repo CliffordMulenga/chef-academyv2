@@ -179,7 +179,7 @@ const FeaturedCoursesSlider = () => {
           }
 
           .animate-scroll {
-            animation: scroll 40s linear infinite;
+            animation: scroll 7s linear infinite;
           }
         `}</style>
       </section>
