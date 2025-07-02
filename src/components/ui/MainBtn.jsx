@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 
 const MainBtn = ({
     styles,
-    title
+    title,
+    to
 }) => {
   return (
-    <Link className={`${styles}`}>
+    <Link to={to} className={`${styles}`}>
       {title}
     </Link>
   )

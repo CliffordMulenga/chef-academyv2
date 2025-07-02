@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '/logo.png';
 import { Link } from 'react-router-dom';
+import MainBtn from './ui/MainBtn';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,12 +38,11 @@ const Navbar = () => {
           </Link>
         ))}
         {/* set how people should apply maybe with a form or instrustions */}
-        <Link
-          to="#apply"
-          className="text-sm bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition"
-        >
-          Apply Now
-        </Link>
+        <MainBtn
+          title={'Apply Now'}
+          to={'#apply'}
+          styles={"text-sm bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition"}
+        />
       </nav>
 
       {/* Hamburger (Mobile) */}
