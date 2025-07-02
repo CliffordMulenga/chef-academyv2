@@ -3,6 +3,11 @@ import './App.css'
 import Homepage from './pages/Homepage'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import About from './pages/About'
+import Restaurants from './pages/Restaurants'
+import Testimonials from './pages/Testimonials'
+import Courses from './pages/Courses'
+import Students from './pages/Students'
 
 function App() {
 
@@ -12,9 +17,14 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path='/' element={<Homepage/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/restaurants' element={<Restaurants/>}/>
+          <Route path='/testimonials' element={<Testimonials/>}/>
+          <Route path='/courses' element={<Courses/>}/>
+          <Route path='/students' element={<Students/>}/>
         </Routes>
 
-        <section className=''><Footer/></section>
+        <Footer/>
         
       </Router>
     </>
