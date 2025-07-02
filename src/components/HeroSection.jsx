@@ -36,7 +36,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-base sm:text-lg md:text-xl max-w-2xl mb-8"
+            className="montserrat text-base sm:text-lg md:text-xl max-w-2xl mb-8"
           >
             Train with Michelin-star chefs and earn your international culinary certification.
           </motion.p>
