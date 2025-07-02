@@ -136,7 +136,7 @@ const FeaturedCoursesSlider = () => {
                 >
                   {/* Arrow */}
                   <Link to={course.to}className={`cursor-pointer absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-4 rounded-full
-                    ${isActive ? 'z-50' : 'z-20'}
+                    ${isActive ? 'z-30' : 'z-20'}
                     `}>
                     <FaExternalLinkAlt className="text-black " />
                   </Link>
