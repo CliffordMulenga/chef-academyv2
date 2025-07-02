@@ -2,7 +2,7 @@
 // FeaturedCoursesSlider.jsx
 import React, { useRef, useState, useEffect } from 'react';
 import Slider from 'react-slick';
-import { FaArrowRight } from 'react-icons/fa';
+import {  FaExternalLinkAlt } from 'react-icons/fa';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { motion } from 'framer-motion';
@@ -21,6 +21,7 @@ import story from '../assets/story.png';
 import saellondon from '../assets/saellondon.png';
 import hakkasan from '../assets/hak.svg';
 import piedaterre from '../assets/PiedàTerre.png';
+import { Link } from 'react-router-dom';
 
 const restaurantLogos = [
   corebyclaresmyth,
@@ -38,30 +39,39 @@ const courseData = [
     category: 'Cooking Course',
     duration: '300 Hours',
     media: course1,
+    to:'#course'
   },
   {
     title: 'Introduction to the Professional Chef Online Course',
     category: 'Online Course',
     duration: '6 Weeks',
     media: course2,
+    to:'#course'
+
   },
   {
     title: 'Advanced Pastry & Confectionary Course',
     category: 'Cooking Course',
     duration: '840 Hours',
     media: course3,
+    to:'#course'
+
   },
   {
     title: 'Kosher Professional Chef Course',
     category: 'Cooking Course',
     duration: '400 Hours',
     media: course4,
+    to:'#course'
+
   },
   {
     title: 'Halal Advanced Professional Chef Course',
     category: 'Cooking Course',
     duration: '550 Hours',
     media: course5,
+    to:'#course'
+
   }
 ];
 
@@ -125,9 +135,11 @@ const FeaturedCoursesSlider = () => {
                   }`}
                 >
                   {/* Arrow */}
-                  <div className="absolute top-4 left-4 z-20 bg-white/80 backdrop-blur-sm p-2 rounded-full">
-                    <FaArrowRight className="text-black" />
-                  </div>
+                  <Link to={course.to}className={`cursor-pointer absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-4 rounded-full
+                    ${isActive ? 'z-50' : 'z-20'}
+                    `}>
+                    <FaExternalLinkAlt className="text-black " />
+                  </Link>
 
                   {/* Media */}
                   <video
