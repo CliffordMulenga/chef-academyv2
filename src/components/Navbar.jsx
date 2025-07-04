@@ -15,6 +15,7 @@ const Navbar = () => {
     { name: 'Students', to: '/students' },
     { name: 'Restaurant Partners', to: '/restaurants' },
     { name: 'Testimonials', to: '/testimonials' },
+    { name: 'Contact Us', to: '/contact' },
   ];
 
   return (

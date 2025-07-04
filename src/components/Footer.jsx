@@ -63,6 +63,8 @@ const Footer = () => {
               <li><a href="#courses" className="hover:text-white">Courses</a></li>
               <li><a href="#students" className="hover:text-white">Students</a></li>
               <li><a href="#apply" className="hover:text-white">Apply Now</a></li>
+              <li><a href="/careers" className="hover:text-white">Careers</a></li>
+              <li><a href="/contact" className="hover:text-white">Contact Us</a></li>
             </ul>
           </div>
 
