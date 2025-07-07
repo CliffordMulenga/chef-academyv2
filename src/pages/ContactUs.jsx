@@ -3,6 +3,10 @@ import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
+import sectionImg from '../assets/food6.jpg'
+import PageHero from '../components/PageHero';
+
+
 const ContactUs = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
@@ -18,8 +22,11 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="bg-white mt-[5rem] py-16 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+    <section className="bg-white    px-6">
+
+      <PageHero image={sectionImg} title={'Contact Us'} desc={''} />
+
+      <div className="max-w-7xl py-18 mx-auto grid md:grid-cols-2 gap-12">
         {/* Contact Info */}
         <div className="space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
