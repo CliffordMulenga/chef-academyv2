@@ -6,6 +6,7 @@ import food4 from '../assets/food4.jpg';
 import food5 from '../assets/food5.jpg';
 import food6 from '../assets/food6.jpg';
 import logo from '/logo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const foodImages = [food1, food2, food3, food4, food5, food6];
@@ -34,12 +35,12 @@ const Footer = () => {
     <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
       Ready to Start Cooking Like a Pro?
     </h2>
-    <a
-      href="#apply"
+    <Link
+      to="#apply"
       className="inline-block mt-2 bg-black text-white px-8 py-4 rounded-md text-lg font-medium hover:bg-gray-800 transition"
     >
       Apply Now
-    </a>
+    </Link>
   </div>
 </section>
 
@@ -59,12 +60,12 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="#about" className="hover:text-white">About</a></li>
-              <li><a href="#courses" className="hover:text-white">Courses</a></li>
-              <li><a href="#students" className="hover:text-white">Students</a></li>
-              <li><a href="#apply" className="hover:text-white">Apply Now</a></li>
-              <li><a href="/careers" className="hover:text-white">Careers</a></li>
-              <li><a href="/contact" className="hover:text-white">Contact Us</a></li>
+              <li><Link to="/about" className="hover:text-white">About</Link></li>
+              <li><Link to="#courses" className="hover:text-white">Courses</Link></li>
+              <li><Link to="#students" className="hover:text-white">Students</Link></li>
+              <li><Link to="#apply" className="hover:text-white">Apply Now</Link></li>
+              <li><Link to="/careers" className="hover:text-white">Careers</Link></li>
+              <li><Link to="/contact" className="hover:text-white">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -72,11 +73,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Follow Us</h4>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-white"><FaFacebookF /></a>
-              <a href="#" className="hover:text-white"><FaInstagram /></a>
-              <a href="#" className="hover:text-white"><FaLinkedinIn /></a>
-              <a href="#" className="hover:text-white"><FaPinterestP /></a>
-              <a href="#" className="hover:text-white"><FaXTwitter /></a>
+              <Link to="#" className="hover:text-white"><FaFacebookF /></Link>
+              <Link to="#" className="hover:text-white"><FaInstagram /></Link>
+              <Link to="#" className="hover:text-white"><FaLinkedinIn /></Link>
+              <Link to="#" className="hover:text-white"><FaPinterestP /></Link>
+              <Link to="#" className="hover:text-white"><FaXTwitter /></Link>
             </div>
           </div>
         </div>

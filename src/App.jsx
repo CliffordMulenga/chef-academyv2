@@ -8,6 +8,7 @@ import Restaurants from './pages/Restaurants'
 import Testimonials from './pages/Testimonials'
 import Courses from './pages/Courses'
 import Students from './pages/Students'
+import ContactUs from './pages/ContactUs'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/testimonials' element={<Testimonials/>}/>
           <Route path='/courses' element={<Courses/>}/>
           <Route path='/students' element={<Students/>}/>
+          <Route path='/contact' element={<ContactUs/>}/>
         </Routes>
 
         <Footer/>
