@@ -21,13 +21,16 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm px-6 md:px-12 py-4 flex items-center justify-between">
       {/* Logo */}
-      <Link to="/" className="flex items-center gap-2">
-        <img src={logo} alt="Chef Academy Logo" className="w-10 h-10 object-contain" />
-        {/* <span className="text-lg font-semibold text-gray-900 hidden md:block">Chef Academy</span> */}
+      <div className=''>
+        <Link to="/" className=" flex items-center gap-2 top-[1rem] left-[2rem]">
+        <img src={logo} alt="Chef Academy Logo" className="w-12 h-12 object-contain" />
+        <span className=" font-semibold text-gray-900 text-sm text-center">Chef Academy <br /><span className='playfair font-extralight'>london</span></span>
       </Link>
+      </div>
+      
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center gap-6">
+      <nav className="hidden lg:flex items-center gap-6">
         {navLinks.map(link => (
           <Link
             key={link.name}
@@ -49,7 +52,7 @@ const Navbar = () => {
       {/* Hamburger (Mobile) */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden flex flex-col justify-center items-center gap-[5px] focus:outline-none"
+        className="lg:hidden flex flex-col justify-center items-center gap-[5px] focus:outline-none"
         aria-label="Toggle navigation"
       >
         <span className={`h-0.5 w-6 bg-black rounded transition-all ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
@@ -65,7 +68,7 @@ const Navbar = () => {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="absolute top-full left-0 w-full bg-white px-6 py-4 flex flex-col gap-4 shadow-md md:hidden"
+            className="absolute top-full left-0 w-full bg-white px-6 py-4 flex flex-col gap-4 shadow-md lg:hidden"
           >
             {navLinks.map(link => (
               <Link
