@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection'
 import WhyChooseUs from '../components/WhyChooseUs'
 import FeaturedCoursesSlider from '../components/FeaturedCoursesSlider'
 import WhatToExpect from '../components/WhatToExpect'
+import Testimonials from './Testimonials'
 
 
 const Homepage = () => {
@@ -12,10 +13,7 @@ const Homepage = () => {
       <section className=""> <WhyChooseUs /></section>
       <section className="">   <FeaturedCoursesSlider /></section>
       <section className=""><WhatToExpect /></section>
-
-
-
-
+      <section><Testimonials isOnHomePage={true}/></section>
     </section>
   )
 }

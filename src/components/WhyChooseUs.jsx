@@ -38,9 +38,19 @@ const WhyChooseUs = () => {
         >
           Why Choose Chef Academy of London?
         </motion.h2>
-        <p className="text-gray-600 text-base md:text-lg">
-          Discover the key advantages of joining one of Europe’s top culinary schools.
-        </p>
+        <div>
+          <p className="text-gray-800 text-sm mb-1">
+            <em>"We don't just teach recipes we teach repetition, technique, and confidence."</em>
+          </p>
+          <p className="text-gray-600 text-base md:text-lg">
+           <strong> Here, you don't sit and watch</strong>. At Chef Academy we believe that to became a chef you need to
+            learn in a real professional kitchen and not by siQng in a classroom. Lessons are taught in a real
+            professional kitchen from day one and emphasise the fact they have access to a lot of ingredients
+            to practice with.
+          </p>
+
+        </div>
+
       </div>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">

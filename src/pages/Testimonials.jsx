@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef} from 'react'
 import sectionImg from '../assets/food5.jpg'
 import PageHero from '../components/PageHero'
 
@@ -26,7 +26,7 @@ const VideoReviews =
     }
   ]
 
-const Testimonials = () => {
+const Testimonials = ({isOnHomePage}) => {
   const iframeRef = useRef(null);
 
   useEffect(() => {
@@ -57,8 +57,9 @@ const Testimonials = () => {
 
   return (
     <section>
-      <PageHero image={sectionImg} title={'Testimonials'} desc={''} />
-
+      {isOnHomePage ? "" : (
+        <PageHero image={sectionImg} title={'Testimonials'} desc={''} />
+      )}
       <div className='mt-10  flex justify-center'>
         <div className='w-full md:w-[90%]'>
           <h1 className='poppins text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight'>Real Stories from real students</h1>
@@ -68,9 +69,9 @@ const Testimonials = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
             {
-              VideoReviews.map((review) =>{
-                return(
-                  <div> 
+              VideoReviews.map((review) => {
+                return (
+                  <div>
                     <h3>{review.name} • <span className='text-sm text-gray-500 mb-2'>{review.location}</span></h3>
                     <iframe
                       ref={iframeRef}
@@ -84,7 +85,7 @@ const Testimonials = () => {
                 )
               })
             }
-            
+
           </div>
 
         </div>
