@@ -6,37 +6,38 @@ import sectionImg from '../assets/food1.jpg'
 
 import { FaCheckCircle } from 'react-icons/fa';
 import AboutFaq from '../components/AboutFaq';
-import HospitalityAcademy from '../assets/hospitality-academy.png'; // placeholder
-import ChefAcademy from '../assets/logo-newyork.png'; // placeholder
-const About = () => {
+import HospitalityAcademy from '../assets/hospitality-academy.png';
+import ChefAcademy from '../assets/logo-newyork.png';
 
+const About = () => {
   const iframeRef = useRef(null);
 
-    useEffect(() => {
-        const iframe = iframeRef.current;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    iframe.contentWindow.postMessage(
-                        '{"event":"command","func":"playVideo","args":""}',
-                        '*'
-                    );
-                } else {
-                    iframe.contentWindow.postMessage(
-                        '{"event":"command","func":"pauseVideo","args":""}',
-                        '*'
-                    );
-                }
-            },
-            { threshold: 0.5 }
-        );
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          iframe.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            '*'
+          );
+        } else {
+          iframe.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            '*'
+          );
+        }
+      },
+      { threshold: 0.5 }
+    );
 
-        if (iframe) observer.observe(iframe);
+    if (iframe) observer.observe(iframe);
 
-        return () => {
-            if (iframe) observer.unobserve(iframe);
-        };
-    }, []);
+    return () => {
+      if (iframe) observer.unobserve(iframe);
+    };
+  }, []);
+
   return (
     <section>
       <PageHero image={sectionImg} title={'About Us'} desc={'Learn what makes us who we are!'} />
@@ -50,19 +51,44 @@ const About = () => {
           </p>
         </section>
 
-        {/* Mission & Accreditation */}
-        <section className="py-20 px-4 max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
+        {/* History of chef academy of london */}
+        <section className="px-4 max-w-7xl mx-auto flex justify-center gap-12 ">
+          <div className='w-[98%] md:w-[70%]'>
+              <h2 className="text-3xl font-bold mb-4">Hisory of Chef Academy of London</h2>
             <p className="text-gray-700 mb-6">
               We aim to transform aspiring cooks into professional chefs by providing an immersive learning environment inside live working kitchens. With real-time mentoring from professional chefs, our students are industry-ready.
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-700 mb-6">
               Chef Academy is proudly accredited by ASIC as a Premier Institution, reinforcing our quality and global reputation.
             </p>
+            </div>
+        </section>
+
+        {/* Mission & vision */}
+        <section className="py-20 px-4 max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+          <div>
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
+            <p className="text-gray-700 mb-6">
+              We aim to transform aspiring cooks into professional chefs by providing an immersive learning environment inside live working kitchens. With real-time mentoring from professional chefs, our students are industry-ready.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Chef Academy is proudly accredited by ASIC as a Premier Institution, reinforcing our quality and global reputation.
+            </p>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
+            <p className="text-gray-700 mb-6">
+              We aim to transform aspiring cooks into professional chefs by providing an immersive learning environment inside live working kitchens. With real-time mentoring from professional chefs, our students are industry-ready.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Chef Academy is proudly accredited by ASIC as a Premier Institution, reinforcing our quality and global reputation.
+            </p>
+            </div>
+            
           </div>
 
-          {/* about us video */}
           <div className="relative w-full h-[320px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-lg">
             <iframe
               ref={iframeRef}
@@ -87,12 +113,28 @@ const About = () => {
               <li className="flex gap-3"><FaCheckCircle className="text-green-600 mt-1" />Personalised course structure & flexibility</li>
               <li className="flex gap-3"><FaCheckCircle className="text-green-600 mt-1" />100% employment rate post-graduation</li>
               <li className="flex gap-3"><FaCheckCircle className="text-green-600 mt-1" />Career support & job placement guidance</li>
+              <li className="flex gap-3"><FaCheckCircle className="text-green-600 mt-1" />Learn with professional ingredients from day one</li>
+              <li className="flex gap-3"><FaCheckCircle className="text-green-600 mt-1" />This isn’t a classroom—it’s a kitchen. Practice starts on day one.</li>
             </ul>
           </div>
         </section>
 
+        {/* Team */}
+        <section className="py-20 px-4 max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+          <div>
+              <h2 className="text-3xl font-bold mb-4">Meet Our Staff</h2>
+            <p className="text-gray-700 mb-6">
+              We aim to transform aspiring cooks into professional chefs by providing an immersive learning environment inside live working kitchens. With real-time mentoring from professional chefs, our students are industry-ready.
+            </p>
+            <div>
+              <div>Leadership</div>
+              <div>Instrutors</div>
+            </div>
+            </div>
+        </section>
+
         {/* Schools Section */}
-        <section className="py-20 px-4 max-w-6xl mx-auto text-center">
+        <section className="py-10 md:py-20 px-4 max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Our Schools</h2>
           <p className="text-gray-600 max-w-3xl mx-auto mb-10">
             Founded in Italy, Chef Academy expanded to the UK, quickly gaining global interest. Our unique model of practical, real-kitchen training has shaped chefs around the world.
@@ -104,7 +146,7 @@ const About = () => {
         </section>
 
         {/* FAQs */}
-        <section className="bg-gray-100 py-20 px-4">
+        <section className="bg-gray-100 py-10 md:py-20 px-4">
           <div className="max-w-5xl mx-auto">
             <AboutFaq />
           </div>

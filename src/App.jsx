@@ -9,25 +9,29 @@ import Testimonials from './pages/Testimonials'
 import Courses from './pages/Courses'
 import Students from './pages/Students'
 import ContactUs from './pages/ContactUs'
+import CourseDetails from './pages/CourseDetails'
 
 function App() {
 
   return (
     <>
       <Router>
-        <Navbar/>
+        <Navbar />
         <Routes>
-          <Route path='/' element={<Homepage/>}/>
-          <Route path='/about' element={<About/>}/>
-          <Route path='/restaurants' element={<Restaurants/>}/>
-          <Route path='/testimonials' element={<Testimonials/>}/>
-          <Route path='/courses' element={<Courses/>}/>
-          <Route path='/students' element={<Students/>}/>
-          <Route path='/contact' element={<ContactUs/>}/>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/restaurants' element={<Restaurants />} />
+          <Route path='/testimonials' element={<Testimonials />} />
+          <Route path='/courses' element={<Courses />} />
+          <Route path='/students' element={<Students />} />
+          <Route path='/contact' element={<ContactUs />} />
+
+          <Route path="/courses/:id" element={<CourseDetails />} />
+
         </Routes>
 
-        <Footer/>
-        
+        <Footer />
+
       </Router>
     </>
   )
