@@ -71,7 +71,7 @@ const Testimonials = ({isOnHomePage}) => {
             {
               VideoReviews.map((review) => {
                 return (
-                  <div>
+                  <div key={review.name}>
                     <h3>{review.name} • <span className='text-sm text-gray-500 mb-2'>{review.location}</span></h3>
                     <iframe
                       ref={iframeRef}

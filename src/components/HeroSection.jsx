@@ -31,7 +31,7 @@ const HeroSection = () => {
             className="poppins text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
           >
             This isn't a classroom it,s a kitchen.
-            <span className="accent font-extrabold"> Practice starts on day one.</span>
+            <span className="text-amber-600 font-extrabold"> Practice starts on day one.</span>
           </motion.h1>
 
           <motion.p

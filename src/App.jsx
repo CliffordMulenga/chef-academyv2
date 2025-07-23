@@ -10,6 +10,7 @@ import Courses from './pages/Courses'
 import Students from './pages/Students'
 import ContactUs from './pages/ContactUs'
 import CourseDetails from './pages/CourseDetails'
+import InternationalStudent from './pages/InternationalStudent'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/courses' element={<Courses />} />
           <Route path='/students' element={<Students />} />
           <Route path='/contact' element={<ContactUs />} />
+          <Route path='/international-student' element={<InternationalStudent />} />
 
           <Route path="/courses/:id" element={<CourseDetails />} />
 

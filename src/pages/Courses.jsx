@@ -6,6 +6,7 @@ import mockDb from '../data/mockDb';
 import DetailSwapCard from '../components/shsfui/cards/course-swap-card';
 import { CookingPot, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import NotSureHowToApplyCard from '@/components/NotSureHowToApplyCard';
 
 
 const Courses = () => {
@@ -67,16 +68,7 @@ const Courses = () => {
           )}
         </div>
 
-        <div className='flex justify-center my-8'>
-          <div className='w-[90%] text-center rounded-[20px] shadow-lg py-8'>
-            <h1 className='text-[24px] font-medium sm:text-4xl'>Not sure how to apply?</h1>
-            <p className='my-4'>If your are an trying to apply for an onsite program but is not currently in the UK click on the international students for guidelines</p>
-            <div className='flex items-center gap-4 flex-col sm:flex-row sm:justify-center'>
-              <Button>Talk to our advisors</Button>
-              <Button>International students</Button>
-            </div>
-          </div>
-        </div>
+        <NotSureHowToApplyCard/>
       </section>
     </section>
   );

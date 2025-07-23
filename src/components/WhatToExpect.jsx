@@ -35,7 +35,7 @@ const WhatToExpect = () => {
                 {/* Text Content */}
                 <div>
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-snug">
-                        What to Expect at Chef Academy
+                        Come behind the scenes...
                     </h2>
                     <p className="text-gray-700 mb-6 text-lg leading-relaxed">
                         Step inside our kitchens and discover what it's like to train with Michelin-star chefs,

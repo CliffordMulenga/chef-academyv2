@@ -22,7 +22,7 @@ const PageHero = ({image, title, desc}) => {
                 animate={{opacity:1, y:0}}
                 transition={{duration:0.8}}
 
-                className='poppins text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight'
+                className='poppins text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight'
             >
             {title}
             </motion.h1>
