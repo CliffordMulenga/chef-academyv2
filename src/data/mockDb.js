@@ -21,6 +21,9 @@ const mockDb = {
       ],
       description:
         'Learn the building blocks of a professional kitchen from the comfort of your home. This course covers essential knife skills, ingredient prep, flavor profiles, hygiene protocols, food theory, and recipe execution—all guided by expert chef mentors online. Ideal for beginners seeking a strong start in culinary arts.',
+        isOnPromo: false,
+        promoDesc:'',
+        isNew:false
     },
     {
       id: 'online-2',
@@ -40,7 +43,33 @@ const mockDb = {
       ],
       description:
         'Explore high-level techniques in plating, sous vide, emulsification, molecular gastronomy, and contemporary cuisine. Learn the secrets used by top Michelin chefs and elevate your cooking to fine-dining standards. Designed for chefs aiming to polish and modernize their skills remotely.',
+        isOnPromo: false,
+        promoDesc:'',
+        isNew:false
     },
+    {
+      id: 'online-3',
+      title: "Demo - New Pastry Intensive Programme Now Available!",
+      price: '£1495',
+      duration: '6 months to complete',
+      studyType: 'Online but Fully supported',
+      certificate: 'Culinary reference document provided',
+      courseOverview:
+        'Master pastry arts in just 2 weeks with our newest course offering."',
+      courseSchedule:
+        'Self-paced with guided advanced tutorials, assessments, and monthly check-ins with master chefs.',
+      entryRequirements: [
+        'Minimum age: 18',
+        'Completion of a foundational course or equivalent experience',
+        'Fluency in English',
+      ],
+      description:
+        'Explore high-level techniques in plating, sous vide, emulsification, molecular gastronomy, and contemporary cuisine. Learn the secrets used by top Michelin chefs and elevate your cooking to fine-dining standards. Designed for chefs aiming to polish and modernize their skills remotely.',
+        isOnPromo: false,
+        promoDesc:'',
+        isNew:false
+    },
+    
   ],
   cookingCourses: [
     {
@@ -206,20 +235,20 @@ const mockDb = {
   },
 
   promotions: [
+    
     {
-      id: "bundle-discount",
-      title: "10% Off When You Enroll in Both Online Courses",
-      description: "Enroll in both the Introduction and Michelin Star Online Courses and get 10% off",
-      applicableCourses: ["online-intro", "online-michelin"],
-      type: "discount"
+      id: "new-course",
+      title: "Demo - New Pastry Intensive Programme Now Available!",
+      newCourses: ["online-3", "cook-1"],
+      type: "new-course",
+      to:'online-3'
     },
     {
-      id: "new-course-launch",
-      title: "New Pastry Intensive Programme Now Available!",
-      description: "Master pastry arts in just 2 weeks with our newest course offering.",
-      applicableCourses: ["pastry-intensive"],
-      type: "new-course"
-    }
+      id: "discount",
+      discountedCourses: ["online-1", "cook-1"],
+      type: "discount",
+      to:'/promotions'
+    },
   ],
 
   team: {

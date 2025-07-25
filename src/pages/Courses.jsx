@@ -7,13 +7,23 @@ import DetailSwapCard from '../components/shsfui/cards/course-swap-card';
 import { CookingPot, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import NotSureHowToApplyCard from '@/components/NotSureHowToApplyCard';
+import { applyPromotionsToCourses } from '@/lib/applyPromotionsToCourses';
 
 
 const Courses = () => {
   const [activeTab, setActiveTab] = useState('online');
   // const navigate = useNavigate();
-  const onlineCourses = mockDb.courses.onlineCourses;
-  const cookingCourses = mockDb.courses.cookingCourses;
+  const onlineCourses = applyPromotionsToCourses(
+  mockDb.courses.onlineCourses,
+  mockDb.promotions
+);
+
+console.log(onlineCourses)
+
+const cookingCourses = applyPromotionsToCourses(
+  mockDb.courses.cookingCourses,
+  mockDb.promotions
+);
 
   return (
     <section>
@@ -22,17 +32,17 @@ const Courses = () => {
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Tabs */}
-          <div className="flex gap-4 mb-8">
+          <div className="flex justify-center sm:justify-start gap-4 mb-8">
             <button
               onClick={() => setActiveTab('online')}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition flex items-center gap-1 ${activeTab === 'online' ? 'bg-black text-white' : 'bg-gray-200 text-gray-700'
+              className={`px-6 py-2 rounded-full text-[10px] md:text-sm font-medium transition flex items-center gap-1 cursor-pointer ${activeTab === 'online' ? 'bg-black text-white' : 'bg-gray-200 text-gray-700'
                 }`}
             >
              <Globe size={16}/> Online Courses
             </button>
             <button
               onClick={() => setActiveTab('cooking')}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition flex items-center gap-1  ${activeTab === 'cooking' ? 'bg-black text-white' : 'bg-gray-200 text-gray-700'
+              className={`px-6 py-2 md:py-2 rounded-full text-[10px] md:text-sm font-medium transition flex items-center gap-1 cursor-pointer ${activeTab === 'cooking' ? 'bg-black text-white' : 'bg-gray-200 text-gray-700'
                 }`}
             >
               <CookingPot size={16}/> Cooking Courses
@@ -46,8 +56,6 @@ const Courses = () => {
                 {onlineCourses.map((course) => (
                   
                     <DetailSwapCard key={course.id} data={course} />
-                  
-                  
                 ))}
 
               </div>
@@ -60,9 +68,9 @@ const Courses = () => {
 
           {/* Cooking Courses */}
           {activeTab === 'cooking' && (
-            <div className="grid md:grid-cols-3 gap-8 shadow-lg">
+            <div className="grid justify-center sm:justify-between sm:grid-cols-2 lg:grid-cols-3 gap-8 shadow-lg">
               {cookingCourses.map((course) => (
-                <DetailSwapCard data={course} />
+                <DetailSwapCard key={course.id} data={course} />
               ))}
             </div>
           )}

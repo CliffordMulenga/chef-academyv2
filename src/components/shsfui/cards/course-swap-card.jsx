@@ -2,10 +2,11 @@
 
 import React, { useState, forwardRef } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight, CircleArrowOutUpRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, CircleArrowOutUpRight, PiggyBank, Sparkles } from "lucide-react";
 import { cn } from "../../../lib/utils";
 import { Button } from "../../../components/ui/button";
 import { ScrollArea, ScrollBar } from "../../../components/ui/scroll-area";
+import PromoBage from "@/components/promoBage";
 
 const DEFAULT_PRODUCT = {
   title: "Introduction to the Professional Chef Online Course",
@@ -41,15 +42,13 @@ const DEFAULT_PRODUCT = {
   id: "default-id"
 };
 
-const DetailSwapCard = forwardRef(({ data = DEFAULT_PRODUCT, className, onImageChange, showImageCounter = true, showDotIndicator = true, showThumbnailNavigator = true, ...restProps }, ref) => {
+const DetailSwapCard = forwardRef(({ data = DEFAULT_PRODUCT, className, onImageChange, showImageCounter = true, showDotIndicator = false, showThumbnailNavigator = true, ...restProps }, ref) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 //   const images = data.images || DEFAULT_PRODUCT.images;
   const images = data.images && data.images.length > 0 ? data.images : DEFAULT_PRODUCT.images;
 
   const totalImages = images.length;
-
-
 
   const handleImageChange = (index) => {
     if (isTransitioning || index === activeIndex) return;
@@ -61,6 +60,12 @@ const DetailSwapCard = forwardRef(({ data = DEFAULT_PRODUCT, className, onImageC
 
   const handleNext = () => handleImageChange((activeIndex + 1) % totalImages);
   const handlePrevious = () => handleImageChange((activeIndex - 1 + totalImages) % totalImages);
+
+  // icon for new course
+  const newCourseIcon = <Sparkles className="text-amber-400" size={16} aria-hidden="true"/>
+
+  // icon for discount
+  const courseDiscountIcon = <PiggyBank className="opacity-80 text-amber-300" size={16} aria-hidden="true"/>
 
   return (
     <div
@@ -149,8 +154,20 @@ const DetailSwapCard = forwardRef(({ data = DEFAULT_PRODUCT, className, onImageC
 
         {/* Counter */}
         {showImageCounter && (
-          <div className="absolute top-2 right-2 z-20 rounded-full bg-black/40 backdrop-blur-sm px-2 py-0.5 text-xs font-medium text-white border border-white/20">
-            {activeIndex + 1} / {totalImages}
+          <div className="absolute top-2 right-2 z-20 px-2 py-0.5 text-xs font-medium text-white flex gap-1 flex-col">
+            {/* {activeIndex + 1} / {totalImages} */}
+            <div>
+              {data.isNew && (
+                <PromoBage desc={'New Course'} icon={newCourseIcon}/>
+              )}
+              
+            </div>
+            <div>
+              {data.isOnPromo && (
+                <PromoBage desc={data.promoDesc} icon={courseDiscountIcon}/>
+                
+              )}
+            </div>
           </div>
         )}
       </div>
