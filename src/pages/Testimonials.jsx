@@ -1,6 +1,7 @@
-import React, { useEffect, useRef} from 'react'
+import React, { useEffect, useRef } from 'react'
 import sectionImg from '../assets/food5.jpg'
 import PageHero from '../components/PageHero'
+import { TextReviews } from '@/components/TextReviews'
 
 const VideoReviews =
   [
@@ -26,7 +27,7 @@ const VideoReviews =
     }
   ]
 
-const Testimonials = ({isOnHomePage}) => {
+const Testimonials = ({ isOnHomePage }) => {
   const iframeRef = useRef(null);
 
   useEffect(() => {
@@ -87,6 +88,19 @@ const Testimonials = ({isOnHomePage}) => {
             }
 
           </div>
+          {
+            isOnHomePage ? '' : (
+              <div className='mt-20 flex flex-col justify-center gap-4'>
+                <div className='w-[90%] sm:[60%] text-center p-2'>
+                  <h1 className='text-xl sm:text-2xl md:text-5xl font-bold text-gray-700 mb-2'>Kind Words from past students..</h1>
+                  <p className='text-[12px] sm:text-sm lg:text-xl'>Checkout what other students say about us</p>
+                </div>
+                <TextReviews />
+              </div>
+            )
+
+          }
+
 
         </div>
 

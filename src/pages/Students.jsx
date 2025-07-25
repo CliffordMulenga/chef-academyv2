@@ -21,6 +21,8 @@ const Students = () => {
 
     <div className="bg-white">
       <Accreditation />
+
+      {/* call for international students */}
       <div className='w-full flex justify-center'>
         <div className='w-[90%] sm:w-[60%] text-center flex flex-col gap-2 items-center'>
           <h1 className='text-3xl font-bold text-gray-800'>Are you not in UK?</h1>

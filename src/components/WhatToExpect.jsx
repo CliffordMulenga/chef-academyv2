@@ -30,7 +30,7 @@ const WhatToExpect = () => {
     }, []);
 
     return (
-        <section className="bg-white py-20 md:py-40">
+        <section className="bg-white py-10 md:py-20">
             <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                 {/* Text Content */}
                 <div>

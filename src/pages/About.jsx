@@ -8,6 +8,8 @@ import { FaCheckCircle } from 'react-icons/fa';
 import AboutFaq from '../components/AboutFaq';
 import HospitalityAcademy from '../assets/hospitality-academy.png';
 import ChefAcademy from '../assets/logo-newyork.png';
+import TeamSection from '@/components/TeamSection';
+import {  CirclePlus, MoveRight } from 'lucide-react';
 
 const About = () => {
   const iframeRef = useRef(null);
@@ -52,14 +54,16 @@ const About = () => {
         </section>
 
         {/* History of chef academy of london */}
-        <section className="px-4 max-w-7xl mx-auto flex justify-center gap-12 ">
+        <section className="px-4 max-w-7xl mx-auto flex justify-center gap-12 text-center">
           <div className='w-[98%] md:w-[70%]'>
               <h2 className="text-3xl font-bold mb-4">Hisory of Chef Academy of London</h2>
             <p className="text-gray-700 mb-6">
-              We aim to transform aspiring cooks into professional chefs by providing an immersive learning environment inside live working kitchens. With real-time mentoring from professional chefs, our students are industry-ready.
+              Founded in 2007, Chef Academy of London has steadily risen to global prominence as one of the world’s most respected culinary institutions. Located in the vibrant culinary hub of central London, the academy was established with a vision to bridge the gap between classroom learning and real-world kitchen experience.
+
+              Over the past decade and a half, Chef Academy has trained thousands of aspiring chefs from around the globe, empowering them with practical skills through its unique live-restaurant training model. This hands-on approach has set the standard for culinary education in the UK and beyond.
             </p>
             <p className="text-gray-700 mb-6">
-              Chef Academy is proudly accredited by ASIC as a Premier Institution, reinforcing our quality and global reputation.
+              Today, the academy is accredited as a Premier Institution by ASIC, an internationally recognized body that validates excellence in academic quality and institutional integrity. As we continue to grow, we remain committed to delivering world-class training to the next generation of professional chefs.
             </p>
             </div>
         </section>
@@ -69,21 +73,25 @@ const About = () => {
           <div>
             <div>
               <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-            <p className="text-gray-700 mb-6">
-              We aim to transform aspiring cooks into professional chefs by providing an immersive learning environment inside live working kitchens. With real-time mentoring from professional chefs, our students are industry-ready.
+            <p className="text-gray-700 mb-2">
+              At Chef Academy of London, our mission is to provide exceptional culinary training through real-world kitchen immersion, expert mentorship, and a tailored learning experience. We are dedicated to:
             </p>
-            <p className="text-gray-700 mb-6">
-              Chef Academy is proudly accredited by ASIC as a Premier Institution, reinforcing our quality and global reputation.
-            </p>
+            
+            <ul className="text-gray-700 mb-6 grid gap-2">
+              <li className='flex gap-1 items-center text-sm sm:text-[14px]'> <CirclePlus size={'14'} className='text-gray-900'/> Delivering industry-relevant, hands-on education in professional culinary environments.</li>
+
+              <li className='flex gap-1 items-center text-sm sm:text-[14px]'> <CirclePlus size={'14'} className='text-gray-900'/> Cultivating creativity, precision, and professionalism in every student.</li>
+              
+              <li className='flex gap-1 items-center text-sm sm:text-[14px]'> <CirclePlus size={'14'} className='text-gray-900'/> Supporting students with career development and job placement assistance after graduation.</li>
+              <li className='flex gap-1 items-center text-sm sm:text-[14px]'> <CirclePlus size={'14'} className='text-gray-900'/> Maintaining the highest standards of food safety, sustainability, and culinary innovation.</li>
+
+            </ul>
             </div>
 
             <div>
               <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
             <p className="text-gray-700 mb-6">
-              We aim to transform aspiring cooks into professional chefs by providing an immersive learning environment inside live working kitchens. With real-time mentoring from professional chefs, our students are industry-ready.
-            </p>
-            <p className="text-gray-700 mb-6">
-              Chef Academy is proudly accredited by ASIC as a Premier Institution, reinforcing our quality and global reputation.
+              To be a global leader in culinary education, recognised for transforming passionate individuals into confident, skilled, and industry-ready chefs. We aim to redefine professional chef training through hands-on experience, innovation, and excellence—preparing our students for successful careers in top-tier kitchens worldwide.
             </p>
             </div>
             
@@ -120,17 +128,8 @@ const About = () => {
         </section>
 
         {/* Team */}
-        <section className="py-20 px-4 max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-          <div>
-              <h2 className="text-3xl font-bold mb-4">Meet Our Staff</h2>
-            <p className="text-gray-700 mb-6">
-              We aim to transform aspiring cooks into professional chefs by providing an immersive learning environment inside live working kitchens. With real-time mentoring from professional chefs, our students are industry-ready.
-            </p>
-            <div>
-              <div>Leadership</div>
-              <div>Instrutors</div>
-            </div>
-            </div>
+        <section className="">
+              <TeamSection/>
         </section>
 
         {/* Schools Section */}
