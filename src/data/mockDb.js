@@ -236,19 +236,19 @@ const mockDb = {
 
   promotions: [
     
-    // {
-    //   id: "new-course",
-    //   title: "Demo - New Pastry Intensive Programme Now Available!",
-    //   newCourses: ["online-3", "cook-1"],
-    //   type: "new-course",
-    //   to:'online-3'
-    // },
-    // {
-    //   id: "discount",
-    //   discountedCourses: ["online-1", "cook-1"],
-    //   type: "discount",
-    //   to:'/promotions'
-    // },
+    {
+      id: "new-course",
+      title: "Demo - New Pastry Intensive Programme Now Available!",
+      newCourses: ["online-3", "cook-1"],
+      type: "new-course",
+      to:'online-3'
+    },
+    {
+      id: "discount",
+      discountedCourses: ["online-1", "cook-1"],
+      type: "discount",
+      to:'/promotions'
+    },
   ],
 
   team: {
