@@ -62,7 +62,7 @@ const Testimonials = ({ isOnHomePage }) => {
         <PageHero image={sectionImg} title={'Testimonials'} desc={''} />
       )}
       <div className='mt-10  flex justify-center'>
-        <div className='w-full md:w-[90%]'>
+        <div className='w-[95%] md:w-[90%]'>
           <h1 className='poppins text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight'>Real Stories from real students</h1>
 
           {/* testimonials */}
@@ -73,7 +73,7 @@ const Testimonials = ({ isOnHomePage }) => {
               VideoReviews.map((review) => {
                 return (
                   <div key={review.name}>
-                    <h3>{review.name} • <span className='text-sm text-gray-500 mb-2'>{review.location}</span></h3>
+                    <h3 className='text-nowrap'> <span className='lg:text-sm'>{review.name}</span> • <span className='text-sm lg:text-[12px] text-gray-500 mb-2'>{review.location}</span></h3>
                     <iframe
                       ref={iframeRef}
                       className="w-full h-50 rounded-lg border border-gray-400"
