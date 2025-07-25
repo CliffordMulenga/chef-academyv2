@@ -18,7 +18,7 @@ export default function NewCoursePromoBanner({data}) {
             <p className="text-sm">
               {data.title}
             </p>
-            <Link to={`/courses/${data.to}`} className="group text-sm font-medium whitespace-nowrap">
+            <Link to={`/courses/${data.to}`} onClick={() => setIsVisible(false)} className="group text-sm font-medium whitespace-nowrap">
               Learn more
               <ArrowRightIcon
                 className="ms-1 -mt-0.5 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
