@@ -6,47 +6,49 @@ import { ChevronLeft, ChevronRight, CircleArrowOutUpRight, PiggyBank, Sparkles }
 import { cn } from "../../../lib/utils";
 import { Button } from "../../../components/ui/button";
 import { ScrollArea, ScrollBar } from "../../../components/ui/scroll-area";
+// import img from '../../../assets/food1.jpg'
 import PromoBage from "@/components/promoBage";
 
-const DEFAULT_PRODUCT = {
-  title: "Introduction to the Professional Chef Online Course",
-  price: "1495",
-  overview:
-    "Learn professional kitchen skills at your own pace. This course gives you access to practical lessons from expert chefs online.",
-  action: {
-    slug: "shsf-work",
-    label: "Explore workspace",
-  },
-  images: [
-    {
-      thumbnail:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=640&h=360&auto=format&fit=cover",
-      alt: "Sample Image",
-    },
-    {
-      thumbnail:
-        "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?q=80&w=640&h=360&auto=format&fit=cover",
-      alt: "Sample Image",
-    },
-    {
-      thumbnail:
-        "https://images.unsplash.com/photo-1553484771-898ed465e931?q=80&w=640&h=360&auto=format&fit=cover",
-      alt: "Sample Image",
-    },
-    {
-      thumbnail:
-        "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=640&h=360&auto=format&fit=cover",
-      alt: "Sample Image",
-    },
-  ],
-  id: "default-id"
-};
+// const DEFAULT_PRODUCT = {
+//   title: "Introduction to the Professional Chef Online Course",
+//   price: "1495",
+//   overview:
+//     "Learn professional kitchen skills at your own pace. This course gives you access to practical lessons from expert chefs online.",
+//   action: {
+//     slug: "shsf-work",
+//     label: "Explore workspace",
+//   },
+//   images: [
+//     {
+//       thumbnail:
+//         {img},
+//       alt: "Sample Image",
+//     },
+//     {
+//       thumbnail:
+//         {img},
+//       alt: "Sample Image",
+//     },
+//     {
+//       thumbnail:
+//         '/food1.jpg',
+//       alt: "public",
+//     },
+//     {
+//       thumbnail:
+//         '../../../assets/food1.jpg',
+//       alt: "path",
+//     },
+//   ],
+//   id: "default-id"
+// };
 
-const DetailSwapCard = forwardRef(({ data = DEFAULT_PRODUCT, className, onImageChange, showImageCounter = true, showDotIndicator = false, showThumbnailNavigator = true, ...restProps }, ref) => {
+const DetailSwapCard = forwardRef(({ data, className, onImageChange, showImageCounter = true, showDotIndicator = false, showThumbnailNavigator = true, ...restProps }, ref) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 //   const images = data.images || DEFAULT_PRODUCT.images;
-  const images = data.images && data.images.length > 0 ? data.images : DEFAULT_PRODUCT.images;
+  const images = data.images;
+  const alt = data.title
 
   const totalImages = images.length;
 
@@ -96,7 +98,7 @@ const DetailSwapCard = forwardRef(({ data = DEFAULT_PRODUCT, className, onImageC
             >
               <img
                 src={image.thumbnail}
-                alt={image.alt || `Detail image ${index + 1}`}
+                alt={alt || `Detail image ${index + 1}`}
                 className="h-full w-full object-cover transition-all duration-500"
                 style={{ objectPosition: index === 0 ? "top" : "center" }}
                 loading="lazy"

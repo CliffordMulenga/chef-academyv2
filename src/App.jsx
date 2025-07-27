@@ -16,18 +16,34 @@ import { useEffect, useState } from 'react'
 import NewCoursePromoBanner from './components/newCoursePromoBanner'
 import DiscountPromoBanner from './components/promoBanner'
 import PromoPage from './pages/PromoPage'
+import Loader from './components/Loader'
 
 
 function App() {
   const [isPromoActive, setIsPromoActive] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   const promos = mockDb.promotions
   const isPromos = promos.length
+
+  
+
 
   useEffect(() => {
     if (isPromos > 0) {
       setIsPromoActive(true)
     }
   }, [isPromos])
+
+  useEffect(() => {
+    // simulate delay or fetch check
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 10000); // 1.5 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loader />;
   
 
   return (

@@ -18,8 +18,6 @@ const Courses = () => {
   mockDb.promotions
 );
 
-console.log(onlineCourses)
-
 const cookingCourses = applyPromotionsToCourses(
   mockDb.courses.cookingCourses,
   mockDb.promotions
