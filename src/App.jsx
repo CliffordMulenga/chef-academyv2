@@ -39,7 +39,7 @@ function App() {
     // simulate delay or fetch check
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 10000); // 1.5 seconds
+    }, 5000); // 1.5 seconds
     return () => clearTimeout(timer);
   }, []);
 
